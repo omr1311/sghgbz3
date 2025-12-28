@@ -2,54 +2,120 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>El Sallayan Adam</title>
+  <title>HELLO AQ</title>
   <style>
     body {
-      background: #f0f0f0;
+      background: #e0e0e0;
+      margin: 0;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
+      overflow: hidden;
       font-family: sans-serif;
     }
 
-    .container {
+    .character {
       position: relative;
-      width: 200px;
-      height: 300px;
+      width: 300px;
+      height: 500px;
     }
 
     .head {
-      width: 80px;
-      height: 80px;
+      width: 150px;
+      height: 150px;
       background: #5c3b1e;
       border-radius: 50%;
       position: absolute;
       top: 0;
-      left: 60px;
+      left: 75px;
+    }
+
+    .eye {
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      position: absolute;
+      top: 50px;
+    }
+
+    .eye.left {
+      left: 35px;
+    }
+
+    .eye.right {
+      right: 35px;
+    }
+
+    .pupil {
+      width: 10px;
+      height: 10px;
+      background: black;
+      border-radius: 50%;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+    }
+
+    .mouth {
+      width: 60px;
+      height: 30px;
+      background: #222;
+      border-radius: 0 0 30px 30px;
+      position: absolute;
+      top: 100px;
+      left: 45px;
+    }
+
+    .ear {
+      width: 30px;
+      height: 50px;
+      background: #5c3b1e;
+      position: absolute;
+      top: 50px;
+      border-radius: 50%;
+    }
+
+    .ear.left {
+      left: -15px;
+    }
+
+    .ear.right {
+      right: -15px;
+    }
+
+    .hair {
+      width: 100%;
+      height: 40px;
+      background: black;
+      border-top-left-radius: 75px;
+      border-top-right-radius: 75px;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
     .body {
-      width: 60px;
-      height: 120px;
+      width: 120px;
+      height: 200px;
       background: #333;
       position: absolute;
-      top: 80px;
-      left: 70px;
-      border-radius: 10px;
+      top: 150px;
+      left: 90px;
+      border-radius: 20px;
     }
 
     .arm {
-      width: 20px;
-      height: 80px;
+      width: 30px;
+      height: 120px;
       background: #5c3b1e;
       position: absolute;
-      top: 90px;
+      top: 160px;
       left: 30px;
       transform-origin: top center;
       animation: wave 1s infinite alternate;
-      border-radius: 10px;
+      border-radius: 15px;
     }
 
     @keyframes wave {
@@ -57,35 +123,44 @@
       100% { transform: rotate(30deg); }
     }
 
-    .bubble {
+    .hello {
       position: absolute;
-      top: -40px;
-      left: 100px;
-      background: white;
-      padding: 10px 15px;
-      border-radius: 15px;
-      border: 2px solid #333;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0px;
       font-weight: bold;
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      color: #222;
+      animation: helloPop 2s ease-out 1s forwards;
     }
 
-    .bubble::after {
-      content: "";
-      position: absolute;
-      left: -10px;
-      top: 50%;
-      transform: translateY(-50%);
-      border: 10px solid transparent;
-      border-right-color: white;
+    @keyframes helloPop {
+      0% {
+        font-size: 0px;
+        opacity: 0;
+        transform: translateX(-50%) scale(0.5);
+      }
+      100% {
+        font-size: 64px;
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="head"></div>
+  <div class="character">
+    <div class="head">
+      <div class="hair"></div>
+      <div class="eye left"><div class="pupil"></div></div>
+      <div class="eye right"><div class="pupil"></div></div>
+      <div class="mouth"></div>
+      <div class="ear left"></div>
+      <div class="ear right"></div>
+    </div>
     <div class="body"></div>
     <div class="arm"></div>
-    <div class="bubble">HELLO AQ</div>
   </div>
+  <div class="hello">HELLO AQ</div>
 </body>
 </html>
