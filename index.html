@@ -107,7 +107,7 @@
       border-radius: 20px;
     }
 
-    /* Omuzdan çıkan kol sol üst çapraza bakıyor */
+    /* Omuzdan çıkan ve yukarı kaldırılan kol */
     .arm {
       position: absolute;
       top: 180px; /* omuz hizası */
@@ -117,7 +117,7 @@
       background: #5c3b1e;
       border-radius: 15px;
       transform-origin: top center;
-      transform: rotate(60deg); /* sol üst çapraz */
+      transform: rotate(-90deg); /* yukarıya doğru */
       animation: wave 1s infinite alternate;
     }
 
@@ -133,8 +133,8 @@
     }
 
     @keyframes wave {
-      0% { transform: rotate(50deg); }
-      100% { transform: rotate(70deg); }
+      0% { transform: rotate(-80deg); }
+      100% { transform: rotate(-100deg); }
     }
 
     .hello {
@@ -142,7 +142,7 @@
       top: 20px;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 100px; /* daha büyük */
+      font-size: 100px;
       font-weight: bold;
       color: #ffffff;
       text-shadow: 2px 2px 15px #00ffff;
